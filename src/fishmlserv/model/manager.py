@@ -11,7 +11,7 @@ def get_model_path():
 	dirname = os.path.dirname(mypath)
 	#/Users/kobatochan/code/fishmlserv/src/fishmlserv/model
 	#modelpath = dirname + "/" + "model.pkl"
-	os.path.join(dirname, "model.pkl")
+	filepath = os.path.join(dirname, "model.pkl")
 	
 	#from fishmlserv.model.manager import get_model_path
 	return filepath

@@ -1,6 +1,8 @@
 from typing import Union
 from fastapi import FastAPI
-import pickle12
+import pickle
+from src.fishmlserv.model.manager.py import get_model_path
+
 
 app = FastAPI()
 
@@ -25,7 +27,10 @@ def fish(length: float, weight:float):
 	returns:
 		dict: dictionary of kindof fish
 	"""
-	with open("/Users/kobatochan/code/fishmlserver/note/model.pkl", "rb") as f:
+	
+	path = get_model_path()
+	
+	with open(path, "rb") as f:
 		fish_model = pickle.load(f)
 
 	pred = "idk"
