@@ -1,5 +1,6 @@
 from typing import Union
 from fastapi import FastAPI
+import pickle12
 
 app = FastAPI()
 
@@ -24,6 +25,9 @@ def fish(length: float, weight:float):
 	returns:
 		dict: dictionary of kindof fish
 	"""
+	with open("/Users/kobatochan/code/fishmlserver/note/model.pkl", "rb") as f:
+		fish_model = pickle.load(f)
+
 	pred = "idk"
 	if length > 30.0:
 		pred = "도미"
